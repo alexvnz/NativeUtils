@@ -76,16 +76,15 @@ public class NativeUtils extends CordovaPlugin{
         alertDialogBuilder.setMessage(this.DIALOG_TEXT)
         .setCancelable(false)
         .setPositiveButton(this.DIALOG_POS_TEXT,
-                new DialogInterface.OnClickListener(){
-            public void onClick(DialogInterface dialog, int id){
-                Intent callGPSSettingIntent = new Intent(
-                        android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                dialog.cancel();
+			new DialogInterface.OnClickListener(){
+			public void onClick(DialogInterface dialog, int id){
+                Intent callGPSSettingIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 myActivity.startActivity(callGPSSettingIntent);
+                dialog.cancel();
             }
         });
         alertDialogBuilder.setNegativeButton(this.DIALOG_NEG_TEXT,
-                new DialogInterface.OnClickListener(){
+			new DialogInterface.OnClickListener(){
             public void onClick(DialogInterface dialog, int id){
                 dialog.cancel();
             }
